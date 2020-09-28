@@ -1,4 +1,4 @@
-package com.evilthreads.skimmerlib
+package com.evilthreads.keylogger
 /*
             (   (                ) (             (     (
             )\ ))\ )    *   ) ( /( )\ )     (    )\ )  )\ )
