@@ -1,0 +1,3 @@
+include ':Keylogger'
+include ':app'
+rootProject.name = "Android Keylogger"
