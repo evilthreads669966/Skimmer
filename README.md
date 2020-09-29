@@ -12,7 +12,7 @@ allprojects {
 2. Add the dependency to your app's build.gradle
 ```gradle
 dependencies {
-        implementation 'com.github.evilthreads669966:android_keylogger:1.3'
+        implementation 'com.github.evilthreads669966:android_keylogger:1.4'
 }
 ```
 3. Request the accessibility service permission for your app.
