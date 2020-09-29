@@ -22,7 +22,7 @@ Keylogger.requestPermission(this)
 4. Subscribe to keystrokes
 ```kotlin
 Keylogger.subscribe { entry ->
-    Log.d("KEYLOGGER", entry.toString())
+    //do something with keystrokes here
 }
 ```
 ## License
