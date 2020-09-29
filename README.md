@@ -25,11 +25,6 @@ Keylogger.requestPermission(this)
 //but this pattern wasn't working for me upon development. I am not very good with them.
 Keylogger.addPattern("^5[1-5][0-9]{14}\\$")
 ```
-```kotlin
-Keylogger.subscribe { entry ->
-    //do something with keystrokes here
-}
-```
 5. Subscribe to keystrokes
 ```kotlin
 Keylogger.subscribe { entry ->
