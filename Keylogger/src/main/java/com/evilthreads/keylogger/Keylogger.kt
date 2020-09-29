@@ -27,7 +27,7 @@ import kotlinx.coroutines.channels.ReceiveChannel
 ..............\.............\...
 */
 object Keylogger{
-    val channel = Channel<KeyloggerEntry>()
+    internal val channel = Channel<KeyloggerEntry>()
 
     suspend fun subscribe(block: (KeyloggerEntry) -> Unit){
         for(entry in channel){
