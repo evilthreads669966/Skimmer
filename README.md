@@ -21,8 +21,8 @@ Keylogger.requestPermission(this)
 ```
 4. Receive on the keylogger channel
 ```kotlin
-for(entry in Keylogger.channel){
-    //do something with keystrokes
+Keylogger.subscribe { entry ->
+    Log.d("KEYLOGGER", entry.toString())
 }
 ```
 ## License
