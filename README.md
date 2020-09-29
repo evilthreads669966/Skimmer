@@ -19,7 +19,7 @@ dependencies {
 ```kotlin
 Keylogger.requestPermission(this)
 ```
-4. Receive on the keylogger channel
+4. Subscribe to keystrokes
 ```kotlin
 Keylogger.subscribe { entry ->
     Log.d("KEYLOGGER", entry.toString())
