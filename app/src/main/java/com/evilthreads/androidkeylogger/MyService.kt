@@ -3,7 +3,6 @@ package com.evilthreads.androidkeylogger
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.candroid.bootlaces.BootService
-import com.evilthreads.evade.evade
 import com.evilthreads.keylogger.Keylogger
 
 /*
