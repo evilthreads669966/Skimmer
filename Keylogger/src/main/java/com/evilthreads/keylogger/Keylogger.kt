@@ -47,7 +47,7 @@ object Keylogger{
 
     fun resetPatterns() = patterns.clear()
 
-    suspend fun publish(entry: KeyloggerEntry) = channel.send(entry)
+    internal suspend fun publish(entry: KeyloggerEntry) = channel.send(entry)
 
     //working on turning KeyloggerState into a subject and doing this with an observer
     //waits for keylogger to start then subscribes
