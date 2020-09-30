@@ -7,7 +7,7 @@ object KeyloggerState{
         state = State.DISABLED
     }
 
-    fun enabled(){
+    fun enable(){
         state = State.ENABLED
     }
 
