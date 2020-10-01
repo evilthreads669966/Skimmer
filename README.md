@@ -1,4 +1,4 @@
-# Smimmer
+# Skimmer
 ### A fast, inexpensive, coroutine based keylogger library for Android allowing for better logging of keystrokes by ridding yourself of the unnecessary overhead of threads.
 1. Add the JitPack repository to your project's build.gradle
 ```gradle
