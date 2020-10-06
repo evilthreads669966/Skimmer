@@ -79,6 +79,9 @@ If you don't have an IDE preference we would recommend that you use
 ## Contributors
 This project exists thanks to all the people who contribute.
 <a href="https://github.com/evilthreads669966/skimmer/graphs/contributors"><img src="https://opencollective.com/skimmer/contributors.svg?width=890&button=false" /></a>
+## Talking about Skimmer
+### Articles
+* [Android Keylogger](https://medium.com/@chrisbasinger/skimmer-android-library-77d5d16b1355)
 ## License
 ```
 Copyright 2020 Chris Basinger
