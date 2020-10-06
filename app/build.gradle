@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.evilthreads.androidkeylogger"
@@ -27,12 +27,12 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation "androidx.lifecycle:lifecycle-service:2.2.0"
     implementation 'com.github.evilthreads669966:evademe:1.0'
-    implementation 'com.github.evilthreads669966:bootlaces:1.0'
+    implementation 'com.github.evilthreads669966:bootlaces:2.1'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
     implementation project(path: ':Keylogger')
     testImplementation 'junit:junit:4.12'
